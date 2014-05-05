@@ -1,0 +1,21 @@
+{
+	"name": "q-encoding",
+	"version": "0.1.0",
+	"description": "A robust & character encoding–agnostic JavaScript implementation of the `Q` encoding as defined by RFC 2047.",
+	"repo": "mathiasbynens/q-encoding",
+	"license": "MIT",
+	"scripts": [
+		"q.js"
+	],
+	"main": "q.js",
+	"keywords": [
+		"decode",
+		"decoding",
+		"encode",
+		"encoding",
+		"q-decode",
+		"q-encode",
+		"q-encoding",
+		"string"
+	]
+}

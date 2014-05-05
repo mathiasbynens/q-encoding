@@ -1,0 +1,55 @@
+{
+	"name": "q-encoding",
+	"version": "0.1.0",
+	"description": "A robust & character encoding–agnostic JavaScript implementation of the `Q` encoding as defined by RFC 2047.",
+	"homepage": "http://mths.be/q",
+	"main": "q.js",
+	"keywords": [
+		"decode",
+		"decoding",
+		"encode",
+		"encoding",
+		"q-decode",
+		"q-encode",
+		"q-encoding",
+		"string"
+	],
+	"licenses": [
+		{
+			"type": "MIT",
+			"url": "http://mths.be/mit"
+		}
+	],
+	"author": {
+		"name": "Mathias Bynens",
+		"url": "http://mathiasbynens.be/"
+	},
+	"repository": {
+		"type": "git",
+		"url": "https://github.com/mathiasbynens/q-encoding.git"
+	},
+	"bugs": {
+		"url": "https://github.com/mathiasbynens/q-encoding/issues"
+	},
+	"files": [
+		"LICENSE-MIT.txt",
+		"q.js"
+	],
+	"directories": {
+		"test": "tests"
+	},
+	"scripts": {
+		"test": "node tests/tests.js"
+	},
+	"devDependencies": {
+		"grunt": "~0.4.4",
+		"grunt-shell": "~0.7.0",
+		"grunt-template": "~0.2.3",
+		"istanbul": "~0.2.7",
+		"qunit-extras": "~1.1.0",
+		"qunitjs": "~1.11.0",
+		"regenerate": "~0.6.1",
+		"requirejs": "~2.1.11",
+		"utf8": "~2.0.0"
+	}
+}

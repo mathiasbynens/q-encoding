@@ -1,0 +1,16 @@
+{
+	"name": "q-encoding",
+	"version": "0.1.0",
+	"main": "q.js",
+	"ignore": [
+		"bin",
+		"coverage",
+		"man",
+		"tests",
+		".*",
+		"component.json",
+		"Gruntfile.js",
+		"node_modules",
+		"package.json"
+	]
+}
