@@ -8,6 +8,7 @@
 	<body>
 		<div id="qunit"></div>
 		<script src="../node_modules/qunitjs/qunit/qunit.js"></script>
+		<script src="../node_modules/utf8/utf8.js"></script>
 		<script src="../q.js"></script>
 		<script>
 			// populate `QUnit.urlParams`
@@ -24,10 +25,10 @@
 				'baseUrl': '../node_modules/requirejs/',
 				'urlArgs': 't=' + (+new Date),
 				'paths': {
-					'q-encoding': '../../q-encoding'
+					'q': '../../q'
 				}
 			},
-			['q-encoding'], function(q-encoding) {
+			['q'], function(q) {
 				require(['tests.js']);
 			});
 		</script>
