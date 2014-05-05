@@ -64,7 +64,7 @@ A string representing the semantic version number.
 
 ### `q.encode(input)`
 
-This function takes an encoded string (the `input` parameter) and `Q`-encodes it. Each item in the input string represents an octet as per the desired character encoding. Here’s an example that uses UTF-8:
+This function takes an encoded byte string (the `input` parameter) and `Q`-encodes it. Each item in the input string represents an octet as per the desired character encoding. Here’s an example that uses UTF-8:
 
 ```js
 var utf8 = require('utf8');
@@ -76,9 +76,9 @@ q.encode(utf8.encode('Iñtërnâtiônàlizætiøn☃💩'));
 // → 'I=C3=B1t=C3=ABrn=C3=A2ti=C3=B4n=C3=A0liz=C3=A6ti=C3=B8n=E2=98=83=F0=9F=92=A9'
 ```
 
-### `q.decode(text, options)`
+### `q.decode(text)`
 
-This function takes a `Q`-encoded string of text (the `text` parameter) and `Q`-decodes it. The return value is a string of which each item represents an octet as per the character encoding that’s being used. Here’s an example that uses UTF-8:
+This function takes a `Q`-encoded string of text (the `text` parameter) and `Q`-decodes it. The return value is a ‘byte string’, i.e. a string of which each item represents an octet as per the character encoding that’s being used. Here’s an example that uses UTF-8:
 
 ```js
 var utf8 = require('utf8');
@@ -89,6 +89,47 @@ utf8.decode(q.decode('foo_=3D_bar'));
 utf8.decode(q.decode('I=C3=B1t=C3=ABrn=C3=A2ti=C3=B4n=C3=A0liz=C3=A6ti=C3=B8n=E2=98=83=F0=9F=92=A9'));
 // → 'Iñtërnâtiônàlizætiøn☃💩'
 ```
+
+
+
+
+### Using the `q` binary
+
+To use the `q` binary in your shell, simply install _q-encoding_ globally using npm:
+
+```bash
+npm install -g q-encoding
+```
+
+After that, you’ll be able to use `q` on the command line. Note that while the _q-encoding_ library itself is character encoding–agnostic, the command-line tool applies the UTF-8 character encoding on all input.
+
+```bash
+$ q --encode 'foo = bar'
+foo_=3D_bar
+
+$ q --decode 'foo_=3D_bar'
+foo = bar
+```
+
+Read a local text file, `Quoted-Printable`-encode it, and save the result to a new file:
+
+```bash
+$ q --encode < foo.txt > foo-q.txt
+```
+
+Or do the same with an online text file:
+
+```bash
+$ curl -sL 'http://mths.be/brh' | q --encode > q.txt
+```
+
+Or, the opposite — read a local file containing a `Quoted-Printable`-encoded message, decode it back to plain text, and save the result to a new file:
+
+```bash
+$ q --decode < q.txt > original.txt
+```
+
+See `q --help` for the full list of options.
 
 ## Support
 

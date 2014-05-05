@@ -4,6 +4,10 @@
 	"description": "A robust & character encoding–agnostic JavaScript implementation of the `Q` encoding as defined by RFC 2047.",
 	"homepage": "http://mths.be/q",
 	"main": "q.js",
+	"bin": {
+		"q": "bin/q"
+	},
+	"man": "man/q.1",
 	"keywords": [
 		"decode",
 		"decoding",
@@ -33,13 +37,20 @@
 	},
 	"files": [
 		"LICENSE-MIT.txt",
-		"q.js"
+		"q.js",
+		"bin/",
+		"man/"
 	],
 	"directories": {
+		"bin": "bin",
+		"man": "man",
 		"test": "tests"
 	},
 	"scripts": {
 		"test": "node tests/tests.js"
+	},
+	"dependencies": {
+		"utf8": "~2.0.0"
 	},
 	"devDependencies": {
 		"grunt": "~0.4.4",
@@ -49,7 +60,6 @@
 		"qunit-extras": "~1.1.0",
 		"qunitjs": "~1.11.0",
 		"regenerate": "~0.6.1",
-		"requirejs": "~2.1.11",
-		"utf8": "~2.0.0"
+		"requirejs": "~2.1.11"
 	}
 }

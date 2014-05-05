@@ -1,0 +1,58 @@
+.Dd May 5, 2014
+.Dt q 1
+.Sh NAME
+.Nm q
+.Nd encode or decode messages using the `Q` encoding
+.Sh SYNOPSIS
+.Nm
+.Op Fl e | -encode Ar string
+.br
+.Op Fl d | -decode Ar string
+.br
+.Op Fl v | -version
+.br
+.Op Fl h | -help
+.Sh DESCRIPTION
+.Nm
+encode or decode messages using the `Q` content transfer encoding.
+.Sh OPTIONS
+.Bl -ohang -offset
+.It Sy "--encode"
+Encode a string of text using UTF-8 and then using the `Q` encoding.
+.It Sy "--decode"
+Decode a string of text using the `Q` encoding, and UTF-8-decode the result.
+.It Sy "-v, --version"
+Print q's version.
+.It Sy "-h, --help"
+Show the help screen.
+.El
+.Sh EXIT STATUS
+The
+.Nm q
+utility exits with one of the following values:
+.Pp
+.Bl -tag -width flag -compact
+.It Li 0
+.Nm
+successfully encoded/decoded the input and printed the result.
+.It Li 1
+.Nm
+wasn't instructed to encode/decode anything (for example, the
+.Ar --help
+flag was set); or, an error occurred.
+.El
+.Sh EXAMPLES
+.Bl -ohang -offset
+.It Sy "q --encode 'foo = bar'"
+Print an encoded version of the given string.
+.It Sy "q --decode 'foo=3Dbar'"
+Print the decoded version of the given `Quoted-Printable`-encoded message.
+.It Sy "echo\ 'foo = bar'\ |\ q --encode"
+Print the encoded version of the string that gets piped in.
+.El
+.Sh BUGS
+q's bug tracker is located at <https://github.com/mathiasbynens/q-encoding/issues>.
+.Sh AUTHOR
+Mathias Bynens <http://mathiasbynens.be/>
+.Sh WWW
+<http://mths.be/q>
