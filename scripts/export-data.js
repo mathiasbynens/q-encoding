@@ -20,11 +20,15 @@ var safeSymbols = regenerate()
 	.remove('?', '_', '\t');
 var definitelyUnsafeSymbols = regenerate()
 	.addRange(0x0, 0x10FFFF)
+	// Note: the script assumes the input is already encoded into octets (e.g.
+	// using UTF-8), and that the resulting octets are within the extended ASCII
+	// range. Thus, there is no need to match astral symbols.
+	.removeRange(0x010000, 0x10FFFF)
 	.remove(safeSymbols)
 	.remove(' '); // Note: space is excluded because it’s special-cased.
 // https://mathiasbynens.be/notes/javascript-encoding#surrogate-pairs
 
 module.exports = {
-	'unsafeSymbols': definitelyUnsafeSymbols.toString(),
+	'unsafeSymbols': definitelyUnsafeSymbols.toString({ 'bmpOnly': true }),
 	'version': JSON.parse(fs.readFileSync('package.json', 'utf-8')).version
 };
