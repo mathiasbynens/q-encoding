@@ -18,7 +18,7 @@
 
 		if (/^(?:-h|--help|undefined)$/.test(option)) {
 			log(
-				'q v%s - http://mths.be/q',
+				'q v%s - https://mths.be/q',
 				q.version
 			);
 			log([

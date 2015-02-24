@@ -1,10 +1,10 @@
 # q-encoding [![Build status](https://travis-ci.org/mathiasbynens/q-encoding.svg?branch=master)](https://travis-ci.org/mathiasbynens/q-encoding) [![Dependency status](https://gemnasium.com/mathiasbynens/q-encoding.svg)](https://gemnasium.com/mathiasbynens/q-encoding)
 
-_q-encoding_ is a character encoding–agnostic JavaScript implementation of [the `Q` encoding as defined by RFC 2047](http://tools.ietf.org/html/rfc2047#section-4.2). It can be used to encode data with any character encoding to its `Q`-encoded form, or the other way around (i.e. decoding).
+_q-encoding_ is a character encoding–agnostic JavaScript implementation of [the `Q` encoding as defined by RFC 2047](https://tools.ietf.org/html/rfc2047#section-4.2). It can be used to encode data with any character encoding to its `Q`-encoded form, or the other way around (i.e. decoding).
 
 ## Installation
 
-Via [npm](http://npmjs.org/):
+Via [npm](https://www.npmjs.com/):
 
 ```bash
 npm install q-encoding
@@ -28,7 +28,7 @@ In a browser:
 <script src="q.js"></script>
 ```
 
-In [Narwhal](http://narwhaljs.org/), [Node.js](http://nodejs.org/), and [RingoJS](http://ringojs.org/):
+In [Narwhal](http://narwhaljs.org/), [Node.js](https://nodejs.org/), and [RingoJS](http://ringojs.org/):
 
 ```js
 var q = require('q-encoding');
@@ -90,9 +90,6 @@ utf8.decode(q.decode('I=C3=B1t=C3=ABrn=C3=A2ti=C3=B4n=C3=A0liz=C3=A6ti=C3=B8n=E2
 // → 'Iñtërnâtiônàlizætiøn☃💩'
 ```
 
-
-
-
 ### Using the `q` binary
 
 To use the `q` binary in your shell, simply install _q-encoding_ globally using npm:
@@ -120,7 +117,7 @@ $ q --encode < foo.txt > foo-q.txt
 Or do the same with an online text file:
 
 ```bash
-$ curl -sL 'http://mths.be/brh' | q --encode > q.txt
+$ curl -sL 'https://mths.be/brh' | q --encode > q.txt
 ```
 
 Or, the opposite — read a local file containing a `Quoted-Printable`-encoded message, decode it back to plain text, and save the result to a new file:
@@ -147,8 +144,8 @@ To generate the code coverage report, use `grunt cover`.
 
 | [![twitter/mathias](https://gravatar.com/avatar/24e08a9ea84deb17ae121074d0f17125?s=70)](https://twitter.com/mathias "Follow @mathias on Twitter") |
 |---|
-| [Mathias Bynens](http://mathiasbynens.be/) |
+| [Mathias Bynens](https://mathiasbynens.be/) |
 
 ## License
 
-_q-encoding_ is available under the [MIT](http://mths.be/mit) license.
+_q-encoding_ is available under the [MIT](https://mths.be/mit) license.

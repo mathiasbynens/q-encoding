@@ -2,7 +2,7 @@
 	"name": "q-encoding",
 	"version": "0.1.1",
 	"description": "A robust & character encoding–agnostic JavaScript implementation of the `Q` encoding as defined by RFC 2047.",
-	"homepage": "http://mths.be/q",
+	"homepage": "https://mths.be/q",
 	"main": "q.js",
 	"bin": {
 		"q": "bin/q"
@@ -18,23 +18,16 @@
 		"q-encoding",
 		"string"
 	],
-	"licenses": [
-		{
-			"type": "MIT",
-			"url": "http://mths.be/mit"
-		}
-	],
+	"license": "MIT",
 	"author": {
 		"name": "Mathias Bynens",
-		"url": "http://mathiasbynens.be/"
+		"url": "https://mathiasbynens.be/"
 	},
 	"repository": {
 		"type": "git",
 		"url": "https://github.com/mathiasbynens/q-encoding.git"
 	},
-	"bugs": {
-		"url": "https://github.com/mathiasbynens/q-encoding/issues"
-	},
+	"bugs": "https://github.com/mathiasbynens/q-encoding/issues",
 	"files": [
 		"LICENSE-MIT.txt",
 		"q.js",

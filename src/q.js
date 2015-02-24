@@ -1,4 +1,4 @@
-/*! http://mths.be/q v<%= version %> by @mathias | MIT license */
+/*! https://mths.be/q v<%= version %> by @mathias | MIT license */
 ;(function(root) {
 
 	// Detect free variables `exports`.
@@ -17,17 +17,17 @@
 
 	/*--------------------------------------------------------------------------*/
 
-	// http://tools.ietf.org/html/rfc2047#section-4.2
+	// https://tools.ietf.org/html/rfc2047#section-4.2
 	var stringFromCharCode = String.fromCharCode;
 	var decode = function(input) {
 		return input
 			// Decode `_` into a space. This is character-encoding-independent;
-			// see http://tools.ietf.org/html/rfc2047#section-4.2, item 2.
+			// see https://tools.ietf.org/html/rfc2047#section-4.2, item 2.
 			.replace(/_/g, ' ')
 			// Decode escape sequences of the form `=XX` where `XX` is any
 			// combination of two hexidecimal digits. For optimal compatibility,
 			// lowercase hexadecimal digits are supported as well. See
-			// http://tools.ietf.org/html/rfc2045#section-6.7, note 1.
+			// https://tools.ietf.org/html/rfc2045#section-6.7, note 1.
 			.replace(/=([a-fA-F0-9]{2})/g, function($0, $1) {
 				var codePoint = parseInt($1, 16);
 				return stringFromCharCode(codePoint);
