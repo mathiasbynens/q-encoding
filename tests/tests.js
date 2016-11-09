@@ -48,12 +48,12 @@
 	test('q.encode', function() {
 		equal(
 			q.encode(utf8.encode('If you believe that truth=beauty, then surely mathematics is the most beautiful branch of philosophy.')),
-			'If_you_believe_that_truth=3Dbeauty,_then_surely_mathematics_is_the_most_beautiful_branch_of_philosophy.',
+			'If_you_believe_that_truth=3Dbeauty=2C_then_surely_mathematics_is_the_most_beautiful_branch_of_philosophy=2E',
 			'Equals sign'
 		);
 		equal(
 			q.encode(utf8.encode('Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo consequat. Duis autem vel eum iriure dolor in hendrerit in vulputate velit esse molestie consequat, vel illum dolore eu feugiat nulla facilisis at vero eros et accumsan et iusto odio dignissim qui blandit praesent luptatum zzril delenit augue duis dolore te feugait nulla facilisi. Nam liber tempor cum soluta nobis eleifend option congue nihil imperdiet doming id quod mazim placerat facer possim assum. Typi non habent claritatem insitam; est usus legentis in iis qui facit eorum claritatem. Investigationes demonstraverunt lectores legere me lius quod ii legunt saepius. Claritas est etiam processus dynamicus, qui sequitur mutationem consuetudium lectorum. Mirum est notare quam littera gothica, quam nunc putamus parum claram, anteposuerit litterarum formas humanitatis per seacula quarta decima et quinta decima. Eodem modo typi, qui nunc nobis videntur parum clari, fiant sollemnes in futurum.')),
-			'Lorem_ipsum_dolor_sit_amet,_consectetuer_adipiscing_elit,_sed_diam_nonummy_nibh_euismod_tincidunt_ut_laoreet_dolore_magna_aliquam_erat_volutpat._Ut_wisi_enim_ad_minim_veniam,_quis_nostrud_exerci_tation_ullamcorper_suscipit_lobortis_nisl_ut_aliquip_ex_ea_commodo_consequat._Duis_autem_vel_eum_iriure_dolor_in_hendrerit_in_vulputate_velit_esse_molestie_consequat,_vel_illum_dolore_eu_feugiat_nulla_facilisis_at_vero_eros_et_accumsan_et_iusto_odio_dignissim_qui_blandit_praesent_luptatum_zzril_delenit_augue_duis_dolore_te_feugait_nulla_facilisi._Nam_liber_tempor_cum_soluta_nobis_eleifend_option_congue_nihil_imperdiet_doming_id_quod_mazim_placerat_facer_possim_assum._Typi_non_habent_claritatem_insitam;_est_usus_legentis_in_iis_qui_facit_eorum_claritatem._Investigationes_demonstraverunt_lectores_legere_me_lius_quod_ii_legunt_saepius._Claritas_est_etiam_processus_dynamicus,_qui_sequitur_mutationem_consuetudium_lectorum._Mirum_est_notare_quam_littera_gothica,_quam_nunc_putamus_parum_claram,_anteposuerit_litterarum_formas_humanitatis_per_seacula_quarta_decima_et_quinta_decima._Eodem_modo_typi,_qui_nunc_nobis_videntur_parum_clari,_fiant_sollemnes_in_futurum.',
+			'Lorem_ipsum_dolor_sit_amet=2C_consectetuer_adipiscing_elit=2C_sed_diam_nonummy_nibh_euismod_tincidunt_ut_laoreet_dolore_magna_aliquam_erat_volutpat=2E_Ut_wisi_enim_ad_minim_veniam=2C_quis_nostrud_exerci_tation_ullamcorper_suscipit_lobortis_nisl_ut_aliquip_ex_ea_commodo_consequat=2E_Duis_autem_vel_eum_iriure_dolor_in_hendrerit_in_vulputate_velit_esse_molestie_consequat=2C_vel_illum_dolore_eu_feugiat_nulla_facilisis_at_vero_eros_et_accumsan_et_iusto_odio_dignissim_qui_blandit_praesent_luptatum_zzril_delenit_augue_duis_dolore_te_feugait_nulla_facilisi=2E_Nam_liber_tempor_cum_soluta_nobis_eleifend_option_congue_nihil_imperdiet_doming_id_quod_mazim_placerat_facer_possim_assum=2E_Typi_non_habent_claritatem_insitam=3B_est_usus_legentis_in_iis_qui_facit_eorum_claritatem=2E_Investigationes_demonstraverunt_lectores_legere_me_lius_quod_ii_legunt_saepius=2E_Claritas_est_etiam_processus_dynamicus=2C_qui_sequitur_mutationem_consuetudium_lectorum=2E_Mirum_est_notare_quam_littera_gothica=2C_quam_nunc_putamus_parum_claram=2C_anteposuerit_litterarum_formas_humanitatis_per_seacula_quarta_decima_et_quinta_decima=2E_Eodem_modo_typi=2C_qui_nunc_nobis_videntur_parum_clari=2C_fiant_sollemnes_in_futurum=2E',
 			'Long text'
 		);
 		equal(
@@ -80,6 +80,11 @@
 			q.encode('foo\0bar\xFFbaz'), // Note: no UTF-8-encoding
 			'foo=00bar=FFbaz',
 			'Lowest and highest octet values (U+0000 and U+00FF)'
+		);
+		equal(
+			q.encode('ooh: ahh'),
+			'ooh=3A_ahh',
+			'colons'
 		);
 		raises(
 			function() {
