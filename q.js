@@ -34,7 +34,9 @@
 			});
 	};
 
-	var regexUnsafeSymbols = /[\0-\x1F=\?_\x7F-\uFFFF]/g;
+	// See https://tools.ietf.org/html/rfc2047#section-5. encoded words may be used in
+	// email headers, at which point these are the only safe characters.
+	var regexUnsafeSymbols = /[^a-zA-Z0-9!*+\-/_ ]/g;
 	var encode = function(string) {
 		// Note: this assumes the input is already encoded into octets (e.g. using
 		// UTF-8), and that the resulting octets are within the extended ASCII
