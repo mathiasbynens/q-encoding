@@ -12,12 +12,22 @@ var regenerate = require('regenerate');
 //              ; SPACEs or TABs at the ends of lines, and is
 //              ; recommended for any character not listed in
 //              ; RFC 2049 as "mail-safe".
+//
+// https://tools.ietf.org/html/rfc2047#section-5 restricts this much
+// more severely in the case quoting is used for a 'word' in an email header:
+//
+//    In this case the set of characters that may be used in a "Q"-encoded
+//    'encoded-word' is restricted to: <upper and lower case ASCII
+//    letters, decimal digits, "!", "*", "+", "-", "/", "=", and "_"
+//    (underscore, ASCII 95.)>.  An 'encoded-word' that appears within a
+//    'phrase' MUST be separated from any adjacent 'word', 'text' or
+//    'special' by 'linear-white-space'.
+//
 var safeSymbols = regenerate()
-	.addRange(33, 60)
-	.addRange(62, 126)
-	// Remove symbols that are unsafe in Q-encoding. Note: space is excluded
-	// because it’s special-cased.
-	.remove('?', '_', '\t');
+	.addRange('A', 'Z')
+	.addRange('a', 'z') // lower case ASCII
+	.addRange('0', '9')  // decimal digits
+	.add('!', '*', '+', '-', '/', '_');
 var definitelyUnsafeSymbols = regenerate()
 	.addRange(0x0, 0x10FFFF)
 	// Note: the script assumes the input is already encoded into octets (e.g.
