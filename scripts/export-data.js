@@ -24,12 +24,10 @@ var regenerate = require('regenerate');
 //    'special' by 'linear-white-space'.
 //
 var safeSymbols = regenerate()
-	.addRange(65, 90)  // upper case ASCII
-	.addRange(97, 122) // lower case ASCII
-	.addRange(48, 57)  // decimal digits
-	.add('!', '*', '+', '-', '/', '_')
-	// Note: space is included because it’s special-cased.
-	.add(' ');
+	.addRange('A', 'Z')
+	.addRange('a', 'z') // lower case ASCII
+	.addRange('0', '9')  // decimal digits
+	.add('!', '*', '+', '-', '/', '_');
 var definitelyUnsafeSymbols = regenerate()
 	.addRange(0x0, 0x10FFFF)
 	// Note: the script assumes the input is already encoded into octets (e.g.
