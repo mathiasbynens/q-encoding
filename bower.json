@@ -1,6 +1,6 @@
 {
 	"name": "q-encoding",
-	"version": "0.1.1",
+	"version": "1.0.0",
 	"main": "q.js",
 	"ignore": [
 		"bin",
