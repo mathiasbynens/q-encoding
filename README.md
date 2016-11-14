@@ -2,6 +2,8 @@
 
 _q-encoding_ is a character encoding–agnostic JavaScript implementation of [the `Q` encoding as defined by RFC 2047](https://tools.ietf.org/html/rfc2047#section-4.2). It can be used to encode data with any character encoding to its `Q`-encoded form, or the other way around (i.e. decoding).
 
+[An online demo is available.](https://mothereff.in/q)
+
 ## Installation
 
 Via [npm](https://www.npmjs.com/):
