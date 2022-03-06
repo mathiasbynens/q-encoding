@@ -86,6 +86,11 @@
 			'ooh=3A_ahh',
 			'colons'
 		);
+		equal(
+			q.encode('my dog_has fleas'),
+			'my_dog=5Fhas_fleas',
+			'underscore roundtrip, disambiguate from original space'
+		)
 		raises(
 			function() {
 				// Note: “forgot” to UTF-8-encode first
