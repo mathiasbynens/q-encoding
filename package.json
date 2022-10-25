@@ -1,6 +1,6 @@
 {
 	"name": "superhuman-q-encoding",
-	"version": "0.1.1",
+	"version": "0.1.2",
 	"description": "A robust & character encoding–agnostic JavaScript implementation of the `Q` encoding as defined by RFC 2047.",
 	"homepage": "https://mths.be/q",
 	"main": "q.js",
@@ -46,10 +46,10 @@
 		"utf8": "^2.1.0"
 	},
 	"devDependencies": {
-		"grunt": "^0.4.5",
+		"grunt": "^1.5.3",
 		"grunt-shell": "^1.1.2",
-		"grunt-template": "^0.2.3",
-		"istanbul": "^0.3.6",
+		"grunt-template": "^1.0.0",
+		"istanbul": "^0.4.5",
 		"qunit-extras": "^1.4.1",
 		"qunitjs": "~1.11.0",
 		"regenerate": "^1.2.1",
