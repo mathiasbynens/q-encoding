@@ -1,5 +1,5 @@
 {
-	"name": "superhuman-q-encoding",
+	"name": "@superhuman/q-encoding",
 	"version": "0.1.2",
 	"description": "A robust & character encoding–agnostic JavaScript implementation of the `Q` encoding as defined by RFC 2047.",
 	"homepage": "https://mths.be/q",
